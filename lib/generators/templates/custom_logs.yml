@@ -1,0 +1,13 @@
+defaults: &defaults
+  include_params: true
+  truncate_length: 25
+  truncate_value: '[R]'
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+test:
+  <<: *defaults
