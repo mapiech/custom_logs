@@ -17,7 +17,7 @@ module CustomLogs
           hash.delete(:params)
         end
 
-        hash.to_json
+        "[CUSTOM-LOGS]#{hash.to_json}"
 
       end
 
