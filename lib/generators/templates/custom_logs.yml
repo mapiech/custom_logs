@@ -2,6 +2,10 @@ defaults: &defaults
   include_params: true
   truncate_length: 25
   truncate_value: '[R]'
+  user_methods: <%= '[]' if user_methods.empty? %>
+<% user_methods.each do |method| -%>
+<%= "    - #{method}" %>
+<% end -%>
 
 development:
   <<: *defaults

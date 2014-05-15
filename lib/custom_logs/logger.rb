@@ -36,7 +36,8 @@ module CustomLogs
           elsif value.instance_of? Hash
             new_hash[key] = truncate_hash(value, length, truncate_value)
           else
-            new_hash[key] = truncate_value
+            # we don't include key when value is not String
+            # new_hash[key] = truncate_value
           end
         end
 

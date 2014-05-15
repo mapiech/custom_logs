@@ -7,4 +7,11 @@ class CustomLogsGenerator < Rails::Generators::Base
     template "custom_logs.yml", 'config/custom_logs.yml'
   end
 
+  private
+
+  def user_methods
+    user_methods = ApplicationController.new.methods.select{|m| m.to_s.starts_with?('current_')}
+  end
+
+
 end
