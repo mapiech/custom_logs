@@ -6,6 +6,12 @@ defaults: &defaults
 <% user_methods.each do |method| -%>
 <%= "    - #{method}" %>
 <% end -%>
+<% if syslog? -%>
+  syslog:
+    host: 'localhost'
+    port: '514'
+<% end -%>
+
 
 development:
   <<: *defaults

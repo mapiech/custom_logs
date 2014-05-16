@@ -45,7 +45,7 @@ module CustomLogs
       end
 
       def dump_users(resource)
-        Socket.write(resource.all.to_json)
+        Socket.write({users: resource.all}.to_json)
       end
 
     end

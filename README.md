@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'custom_logs'
+    gem 'custom_logs', '0.0.4'
 
 And then execute:
 
@@ -14,13 +14,19 @@ And then execute:
 
 Generate config file:
 
-    $ rails g custom_logs
+    $ rails g custom_logs or rails g custom_logs syslog
 
-Or install it yourself as:
-
-    $ gem install custom_logs
 
 ## Usage
+
+You can log your users data with this command:
+
+    $ bundle exec rake custom_logs:dump_users #for User class
+
+    or
+
+    $ bundle exec rake custom_logs:dump_users dump_class=Admin #for your custom class
+
 
 TODO: Write usage instructions here
 
