@@ -17,7 +17,7 @@ module CustomLogs
           hash.delete(:params)
         end
 
-        "[CUSTOM-LOGS]#{hash.to_json}"
+        "#{hash.to_json}"
 
       end
 
@@ -42,6 +42,10 @@ module CustomLogs
         end
 
         new_hash
+      end
+
+      def dump_users(resource)
+        Socket.write(resource.all.to_json)
       end
 
     end

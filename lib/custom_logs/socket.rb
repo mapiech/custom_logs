@@ -9,7 +9,7 @@ module CustomLogs
       end
 
       def write(message)
-        get.unknown(message)
+        get.unknown("[CUSTOM-LOGS]#{message}")
       end
     end
 
