@@ -16,6 +16,11 @@ module CustomLogs
           @@socket = ::Logger.new(STDOUT)
           @@socket_type = :stdout
         end
+
+        @@socket.formatter  = proc do |severity, datetime, progname, msg|
+          "#{msg}\n"
+        end
+
         @@socket
       end
 
