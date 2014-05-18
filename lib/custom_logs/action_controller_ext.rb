@@ -6,7 +6,7 @@ module CustomLogs
     def custom_logs
 
       original_params = get_original_params
-      original_flash = get_original_flash
+      #original_flash = get_original_flash
 
       yield
 
@@ -36,7 +36,7 @@ module CustomLogs
 
     def get_original_params
       path_params = request.path_parameters
-      request.params.clone.except(*path_params.keys)
+      request.params.clone.except(:controller, :action)
     end
 
     def get_original_flash
