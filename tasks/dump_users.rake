@@ -5,7 +5,12 @@ namespace :custom_logs do
 
     logger = Logger.new(STDOUT)
     my_dump_class_string = (ENV['dump_class'] || 'User').classify
-    my_dump_class = my_dump_class_string.safe_constantize
+
+    begin
+      my_dump_class = my_dump_class_string.constantize
+    rescue
+      my_dump_class = nil
+    end
 
     if my_dump_class
       CustomLogs::Logger.dump_users(my_dump_class)
